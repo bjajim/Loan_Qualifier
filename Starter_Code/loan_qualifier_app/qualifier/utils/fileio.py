@@ -51,4 +51,4 @@ def save_csv(savepath, loan_data):
             csvwriter.writerow(data)
     print(f"Your data has been saved at {savepath}")
 
-    
+  
