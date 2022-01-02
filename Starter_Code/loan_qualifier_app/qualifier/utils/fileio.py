@@ -28,3 +28,27 @@ def load_csv(csvpath):
         for row in csvreader:
             data.append(row)
     return data
+
+def save_csv(savepath, loan_data):
+    """Create the CSV file from path provided.
+
+    Args:
+        savepath (Path): The csv file path.
+        loan_data (list): The loan data
+
+    Returns:
+        None
+
+    """
+    savepath = savepath + "\\loan_data.csv"
+    title = ["Lender","Max Loan Amount","Max LTV","Max DTI","Min Credit Score","Interest Rate"]
+    with open(savepath, "w") as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter=",")
+
+        # write the CSV data
+        csvwriter.writerow(title)
+        for data in loan_data:
+            csvwriter.writerow(data)
+    print(f"Your data has been saved at {savepath}")
+
+    
